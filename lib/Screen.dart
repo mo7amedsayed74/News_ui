@@ -8,34 +8,62 @@ class Screen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.grey[400],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        items:const
+        backgroundColor: Colors.white,
+        actions: const
         [
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.home,
-              color: Colors.white,
-            ),
-            label: " ",
+          Icon(
+            Icons.notifications,
+            color: Colors.orange,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.video_collection_outlined,
-              color: Colors.white,
-            ),
-            label: " ",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-                Icons.save,
-              color: Colors.white,
-            ),
-            label: " ",
-          )
         ],
+        title: const Text(
+          "NewsApp",
+          style: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsetsDirectional.only(
+          start: 5,
+          end: 5,
+          bottom: 5,
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12,),
+          ),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: BottomNavigationBar(
+            backgroundColor: Colors.black,
+            items:const
+            [
+              BottomNavigationBarItem(
+                icon: Icon(
+                    Icons.home,
+                  color: Colors.white,
+                ),
+                label: " ",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                    Icons.video_collection_outlined,
+                  color: Colors.white,
+                ),
+                label: " ",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                    Icons.save,
+                  color: Colors.white,
+                ),
+                label: " ",
+              )
+            ],
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -47,28 +75,6 @@ class Screen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children:
               [
-                Row(
-                  children: const
-                  [
-                    Expanded(
-                      child: Text(
-                        "NewsApp",
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                    Icon(
-                      Icons.notifications,
-                      color: Colors.orange,
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 25,
-                ),
                 const Text(
                   "Breaking News",
                   style: TextStyle(
